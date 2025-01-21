@@ -3,9 +3,10 @@
 @file: dubbo_feng.py 
 @time: 2018/3/29 12:26 
 """
-from pyhessian.client import HessianProxy
-from pyhessian import protocol
-from public.log import LOG, logger
+import protocol as protocol
+from hessian.client import HessianProxy
+# from hessian import protocol
+from Public.log import LOG, logger
 
 
 @logger('dubbo接口')
@@ -16,6 +17,7 @@ class DubboInterface:
         self.method = method
         self.param = param
         self.interfaceparam = protocol.object_factory(self.param, **kwargs)
+        # self.interfaceparam = protocol.
 
     def getresult(self):
         try:

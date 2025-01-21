@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Date    : 2017-08-02 21:54:08
 # @Author  : lileilei
-from public.fengzhuang_dict import res
-from .log import LOG, logger
+import ast
+
+from Public.fengzhuang_dict import res
+from Public.log import logger, LOG
 
 
 @logger('断言测试结果')
@@ -26,7 +28,21 @@ def assertre(asserassert):
     if len(asserassert.split('=')) > 1:
         data = asserassert.split('&')
         result = dict([(item.split('=')) for item in data])
+
+        # 处理 result 字段，如果是 JSON 字符串，解析成字典
+        if 'result' in result:
+            try:
+                # 尝试将 result 的值从字符串解析为字典
+                result['result'] = ast.literal_eval(result['result'])  # 将字符串转换为字典
+            except (ValueError, SyntaxError):  # 如果解析失败，说明 result 不是一个合法的字典字符串
+                pass  # 保持原始字符串不变
         return result
     else:
         LOG.info('填写测试预期值')
         raise {"code": 1, 'result': '填写测试预期值'}
+
+
+if __name__ == '__main__':
+    asserassert = "code=0,result={'error_no': '1001', 'message': '请求数据不是有效的Json字符串'}"
+    returnjson = "{'code': 0, 'result': {'error_no': 1001, 'message': '请求数据不是有效的Json字符串'}}"
+    assert_in(asserassert, returnjson)

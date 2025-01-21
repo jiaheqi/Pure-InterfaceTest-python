@@ -3,7 +3,7 @@
 # @Author  : lileilei
 # @Site    : 
 # @File    : testFengzhuang.py
-from public.test_requests import requ
+from Public.test_requests import requ
 
 
 class TestApi(object):

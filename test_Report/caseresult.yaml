@@ -1,10 +1,5 @@
-1.0:
+登录接口0003:
   code: 0
   result:
-    code: 40007
-    text: 您的请求内容为空。
-2.0:
-  code: 0
-  result:
-    code: 40007
-    text: 您的请求内容为空。
+    error_no: 1001
+    message: 请求数据不是有效的Json字符串

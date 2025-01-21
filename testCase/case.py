@@ -3,15 +3,15 @@
 # @Author  : lileilei
 # @File    : case.py
 from Interface.testFengzhuang import TestApi
-from public.get_excel import datacel
-from public.log import LOG, logger
+from Public.get_excel import datacel
+from Public.log import LOG, logger
 import os
 from config.config import Config_Try_Num, TestPlanUrl
 
-path = os.path.join(os.path.join(os.getcwd(), 'test_case_data'), 'case.xlsx')
+path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'test_case_data', 'case.xlsx')
 
 listid, listkey, listconeent, listurl, listfangshi, listqiwang, listname = datacel(path)
-from public.panduan import assert_in
+from Public.panduan import assert_in
 
 
 @logger('测试')
