@@ -13,7 +13,7 @@ def send_ding(content):
     pagrem = {
         "msgtype": "text",
         "text": {
-            "content": content
+            "content": f"消息通知:\n{content}"
         },
         "isAtAll": True
     }

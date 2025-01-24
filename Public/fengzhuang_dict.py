@@ -34,3 +34,11 @@ def res(d, code):
                     for item in value:
                         result.append(item)
             return result
+
+if __name__ == '__main__':
+    d = {'code': 0, 'result': {'error_no': 1001, 'message': '请求数据不是有效的Json字符串'}}
+    key = 'code'
+    result = {'code': '0'}
+    print(res(d, 'code'))
+    value1 = ([(str(res(d, key))) for key in result.keys()])
+    print(value1)

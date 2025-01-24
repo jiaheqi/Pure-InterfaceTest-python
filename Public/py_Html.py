@@ -156,9 +156,9 @@ def relust(titles, starttime, endtime, passge, fail, id, name, key, coneent, url
             if relust[i] == "pass":
                 clazz = "success"
             elif relust[i] == "fail":
-                clazz = "warning"
-            elif relust[i] == "weizhi":
                 clazz = "danger"
+            elif relust[i] == "weizhi":
+                clazz = "warning"
             else:
                 clazz = 'error'
             relus += (

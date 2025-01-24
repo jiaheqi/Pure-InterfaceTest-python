@@ -11,9 +11,9 @@ from Public.log import logger, LOG
 def assert_in(asserassert, returnjson):
     if len(asserassert.split('=')) > 1:
         data = asserassert.split('&')
-        result = dict([(item.split('=')) for item in data])
-        value1 = ([(str(res(returnjson, key))) for key in result.keys()])
-        value2 = ([(str(value)) for value in result.values()])
+        result = dict([(item.split('=')) for item in data])  # result = {'code': '0', 'result': "{'error_no': 1001, 'message': '请求数据不是有效的Json字符串'}"}
+        value1 = ([str(res(returnjson, key)[0]) for key in result.keys()])  # value1 = ['0', "{'error_no': 1001, 'message': '请求数据不是有效的Json字符串'}"]
+        value2 = ([value for value in result.values()])
         if value1 == value2:
             return {'code': 0, "result": 'pass'}
         else:

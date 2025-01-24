@@ -34,9 +34,13 @@
 
     run_excel_re.py生成 excel 报告，
     run_html.py生成 html 报告，
+    run_http_html.py生成 html 报告，
     run_new.py生成新的报告。
 
-### 7.run_new.py 新版执行方式，重写了unittest方法，利用ddt驱动，生成漂亮的测试报告
+### 7.run_new.py 新版执行方式，重写了unittest方法，利用ddt驱动，生成漂亮的测试报告(个人更偏向使用run_http_html.py生成的报告)
+
+### 8.钉钉通知
+![钉钉通知](img/dingding.png)
 
 ## 快速开始
 
@@ -48,25 +52,28 @@ pip install -r requirements.txt
 
 2. 添加测试数据
    最后一列如果参与测试则设置为 Y，如果不参与则设置为非 Y，如 N，多个断言条件用`&`拼接
-   ![添加测试数据](images/mdimages/2025-01-21-19-16-41.png)
+   ![添加测试数据](img/testdata.png)
 
 3. 运行脚本
 
 ```shell
-python run_new.py
+python run_http_html.py
 ```
 
 4. 查看测试报告,测试报告在test_Report目录下
 
 ## run_new.py产生的html测试报告如下
 
-![html 测试报告](images/mdimages/2025-01-21-18-00-33.png)
+![html 测试报告](img/2025-01-21-18-00-33.png)
 
 ## run_excel_re.py产生的Excel测试报告如下
 
-![excel 测试报告](images/mdimages/2025-01-21-18-03-23.png)
-![excel 测试详情](images/mdimages/2025-01-21-18-03-58.png)
+![excel 测试报告](img/2025-01-21-18-03-23.png)
+![excel 测试详情](img/2025-01-21-18-03-58.png)
+
+## run_http_html.py产生的html测试报告如下
+![html 测试报告](img/htmltestreport.png)
 
 ### 现在的测试结构更加完整，最新的一次提交增加了log日志的展示，使功能更加完善，log日志在控制台展示如下，对目录进行优化
 
-![log 日志](images/mdimages/2025-01-21-18-04-54.png)
+![log 日志](img/2025-01-21-18-04-54.png)
